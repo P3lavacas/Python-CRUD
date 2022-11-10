@@ -1,0 +1,69 @@
+{% include 'header.html' %}
+<br>
+{% for empleado in empleados %}
+    <form method="post" action="/update" enctype="multipart/form-data">
+        ID:
+        <input type="text" value="{{empleado[0]}}" name="txtID" id="txtID">
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Datos del empleado
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Verifica tus correcciones</h4>
+                <p class="card-text">
+                    <div class="form-group">
+                        <label for="txtID">ID:</label>
+                        <input type="hidden" name="txtID" id="txtID" value="{{empleado[0]}}"class="form-control" placeholder="" aria-describedby="helpId">
+                      </div>
+                    <div class="form-group">
+                      <label for="txtNombre">Nombre:</label>
+                      <input type="text" name="txtNombre" id="txtNombre" value="{{empleado[1]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtAPaterno">Apellido Paterno:</label>
+                        <input type="text" name="txtAPaterno" id="txtAPaterno" value="{{empleado[2]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtAMaterno">Apellido Materno:</label>
+                        <input type="text" name="txtAMaterno" id="txtAMaterno" value="{{empleado[3]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtAlias">Alias:</label>
+                        <input type="text" name="txtAlias" id="txtAlias" value="{{empleado[4]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFechaN">Fecha de Nacimiento:</label>
+                        <input type="date" name="txtFechaN" id="txtFechaN" value="{{empleado[5]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCorreo">Correo:</label>
+                        <input type="text" name="txtCorreo" id="txtCorreo" value="{{empleado[6]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtTelefono">Teléfono:</label>
+                        <input type="text" name="txtTelefono" id="txtTelefono" value="{{empleado[7]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtDireccion">Dirección:</label>
+                        <input type="text" name="txtDireccion" id="txtDireccion" value="{{empleado[8]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFoto">Foto:</label>
+                        <br>
+                        <img calss="img-Thumbnail" width="100"src="{{url_for('uploads', nombreFoto = empleado[9])}}">
+                        <br>
+                        <input type="file" name="txtFoto" id="txtFoto" value="{{empleado[9]}}" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <input type="Submit"  class="btn btn-succes" value ="Agregar" >
+                        <a href="{{url_for('index')}}" class="btn btn_primary">Regresar</a>
+                    </div>
+                
+                </p>
+    
+    </form>
+    
+{% endfor %}
+<br>
+{% include 'footer.html' %}

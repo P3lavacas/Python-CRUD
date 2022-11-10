@@ -1,17 +1,58 @@
-<form method="post" action="/store" enctype="multipart/from-data">
+{% include 'header.html' %}
+<br>
+<form method="post" action="/store" enctype="multipart/form-data">
 
-    Nombre:
-    <input type="text" name="txtNombre" id="txtNombre">
-    <br>
-
-    Correo:
-    <input type="text" name="txtCorreo" id="txtCorreo">
-    <br>
-
-    Foto:
-    <input type="text" name="txtFoto" id="txtFoto">
-    <br>
-    <br>
-    <input type ="submit" value ="Agragar">
+    <div class="card">
+        <div class="card-header">
+            Creación de un nuevo empleado
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">¡Bienvenido!</h4>
+            <p class="card-text">
+                <div class="form-group">
+                  <label for="txtNombre">Nombre:</label>
+                  <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtAPaterno">Apellido Paterno:</label>
+                    <input type="text" name="txtAPaterno" id="txtAPaterno" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtAMaterno">Apellido Materno:</label>
+                    <input type="text" name="txtAMaterno" id="txtAMaterno" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtAlias">Alias:</label>
+                    <input type="text" name="txtAlias" id="txtAlias" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtFechaN">Fecha de Nacimiento:</label>
+                    <input type="date" name="txtFechaN" id="txtFechaN" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtCorreo">Correo:</label>
+                    <input type="text" name="txtCorreo" id="txtCorreo" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtTelefono">Teléfono:</label>
+                    <input type="text" name="txtTelefono" id="txtTelefono" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtDireccion">Dirección:</label>
+                    <input type="text" name="txtDireccion" id="txtDireccion" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="txtFoto">Foto:</label>
+                    <input type="file" name="txtFoto" id="txtFoto" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <input type="Submit"  class="btn btn-succes" value ="Agregar" >
+                    <a href="{{url_for('index')}}" class="btn btn_primary">Regresar</a>
+                </div>
+            
+            </p>
+    </div>
 
 </form>
+<br>
+{% include 'footer.html' %}
